@@ -1,0 +1,2 @@
+# mox
+My bspwm configs
