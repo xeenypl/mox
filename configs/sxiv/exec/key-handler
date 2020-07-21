@@ -1,0 +1,20 @@
+#!/bin/sh
+
+walloptions="--zoom"
+
+case "$1" in
+  "C-w")
+    while read file; do
+      # xwallpaper --zoom "$file"
+      cp "$file" ~/.config/wallpaper
+      xwallpaper $walloptions "$file"
+    done
+    ;;
+  "C-s")
+    NAME="$(echo | dmenu)"
+    [ -e "$NAME" ] || mkdir "$NAME"
+    while read file; do
+      mv "$file" "$NAME"
+    done
+    ;;
+esac
