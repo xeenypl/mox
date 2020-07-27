@@ -1,15 +1,15 @@
 call plug#begin('~/.local/vim/plugged')
-    Plug 'dense-analysis/ale'
-
-    Plug 'mattn/emmet-vim'
-    Plug 'preservim/nerdtree'
-
-    Plug 'dhruvasagar/vim-table-mode'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'terryma/vim-multiple-cursors'
+  Plug 'mcchrish/nnn.vim'
+  Plug 'dhruvasagar/vim-table-mode'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-set number nowrap
 set undofile undodir=~/.local/vim/undodir
 set tabstop=2 shiftwidth=2 expandtab
 set ignorecase
@@ -17,8 +17,21 @@ set smartcase
 "set foldmethod=indent
 set laststatus=0
 
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
+set cmdheight=1
+
 command W w
 command Wq wq
+
+
+let g:nnn#layout = { 'left': '~20%' }
+let g:nnn#action = {
+      \ '<c-z>': 'split',
+      \ '<c-x>': 'vsplit' }
+nnoremap <Tab> :NnnPicker<CR>
 
 vnoremap <Tab>      >gv
 vnoremap <S-Tab>    <gv
@@ -34,15 +47,10 @@ nnoremap <C-H>      <C-W><C-H>
 nnoremap j          gj
 nnoremap k          gk
 
-nnoremap <Tab>      :NERDTreeToggle<CR>
+nnoremap <C-p>     :Files<cr>
+nnoremap <leader>s :Rg<cr>
 
-let g:ale_completion_enabled = 1
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'html': ['prettier'],
-\   'c': ['uncrustify'],
-\}
+autocmd BufWritePost *sxhkdrc !pkill -USR1 -x sxhkd
 
 set background=dark
 set cursorline

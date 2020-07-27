@@ -7,78 +7,81 @@
 
 # pkill -USR1 -x sxhkd
 super + Return
-    $TERMINAL
+  $TERMINAL
+
+super + s; {Return, m, t}
+  $TERMINAL -e {nnn, ncmpcpp, transmission-remote-cli}
 
 super + a
-    rofi -show run
+  rofi -show run
 
 super + slash
-    notify-send (date)
+  notify-send (date)
 
 super + alt + slash
-    notify-send (acpi)
+  notify-send (acpi)
 
 super + p
-    scrot
+  scrot
 
 super + {_, shift + } q
-    bspc node -{c,k}
+  bspc node -{c,k}
 
 super + Tab
-    rofi -show window
+  rofi -show window
 
-alt + Tab
-    rofi -show window
-
-super + {minus, equal}
-    amixer set Master {5%-, 5%+}
+super + {0, minus, equal}
+  amixer set Master {toggle, 5%-, 5%+}
 
 super + {z,x,c}
-    cmus-remote {--prev, --next, --pause}
+  mpc {prev, next, toggle}
+
+super + v
+  mpv-taggle
 
 super + s; {w,q,f,a}
-    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+  bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 super + s; {1-9,0,minus,equal}
-    bspc desktop -f focused:'^{1-9,10,11,12}'
+  bspc desktop -f focused:'^{1-9,10,11,12}'
 
 super + {i, o}
-    bspc desktop -f {next,prev}
+  bspc desktop -f {next,prev}
 
 super + space
-    bspc monitor -f next
+  bspc monitor -f next
 
 super + shift + space
-    bspc monitor -f prev
+  bspc monitor -f prev
 
 super + d; {1-9,0,minus,equal}
-    bspc node -d focused:'^{1-9,10,11,12}'
+  bspc node -d focused:'^{1-9,10,11,12}'
 
 super + d; space
-    bspc node -m next
+  bspc node -m next
 
 super + d; super + space
-    bspc node -m prev
+  bspc node -m prev
 
 super + {h,j,k,l}
-    bspc node -f {west,south,north,east}
+  bspc node -f {west,south,north,east}
 
 super + s; {h,j,k,l}
-    bspc node -s {west,south,north,east}
+  bspc node -s {west,south,north,east}
 
 # make preselettions
 super + d; {h,j,k,l}
-    bspc node -p {west,south,north,east}
+  bspc node -p {west,south,north,east}
 
 # cancel preselettions
 super + d; Return
-    bspc node -p cancel
+  bspc node -p cancel
 
 super + alt + {h,j,k,l}
-    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+  bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 super + shift + alt + {h,j,k,l}
-    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+  bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 super + shift + {h,j,k,l}
-    bspc node -v {-20 0,0 20,0 -20,20 0}
+  bspc node -v {-20 0,0 20,0 -20,20 0}

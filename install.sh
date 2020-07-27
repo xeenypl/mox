@@ -17,6 +17,8 @@ yay -S gimp inkscape blender krita krita-plugin-gmic imagemagick
 
 yay -S jack2 ardour x42-plugins lsp-plugins calf eq10q samplv1 synthv1
 
+yay -S rofi bspwm sxhkd dunst xdo
+
 if [ ! -e /usr/share/applications/transmission.desktop ]; then
   echo [Desktop Entry]                 | sudo tee -a /usr/share/applications/transmission.desktop
   echo Name=Transmission               | sudo tee -a /usr/share/applications/transmission.desktop
