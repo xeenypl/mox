@@ -1,8 +1,8 @@
 sw_volume: 100
 audio_device_state:1:default detected output
 state: pause
-current: 2
-time: 43.360000
+current: 7
+time: 32.483000
 random: 1
 repeat: 1
 single: 0
@@ -14,18 +14,10 @@ playlist_begin
 0:other/【バーチャルユーチューバー】インドア系ならトラックメイカー-HIMARI REMIX-【歌ってみた】.mp3
 1:other/【ちくわ】人生マタタビ【オリジナル曲】.mp3
 2:other/Eromanga-sensei Ending Full『TrySail - adrenaline!!!』.mp3
-3:other/Gabriel DropOut Opening - Gabriel DropKick (Single).mp3
-4:other/Gakkou Gurashi Opening Full -『Friend Shitai』.mp3
-5:other/Happy Sugar Life OP Full【MAD Lyrics】.mp3
-6:other/Jashin chan opening.mp3
-7:other/Kaguya-sama - Love Is War - Chika Dance Song Full『Chikatto Chika Chika♡』.mp3
-8:other/Kaguya-sama - Love Is War「Chikatto Chika Chika♡」- German ver. _ Selphius.mp3
-9:other/Kobayashi-san chi no Maid Dragon ending full + lyrics.mp3
-10:other/Miss Kobayashi's Dragon Maid   Opening FULL.mp3
-11:other/Natsu Fuji - Kawaii Party.mp3
-12:other/OP-Jashin-chan Dropkick  (Jashin★Girls - Ano ko ni Drop Kick) Lyrics.mp3
-13:other/the new sweet groove.mp3
-14:other/Watashi ni Tenshi ga Maiorita OP Full - Kimama na Tenshitachi_Wataten 5 (Vietsub - Lyrics).mp3
-15:other/Yunomi & nicamoq – インドア系ならトラックメイカー.mp3
-16:other/Happy Happy Friends.mp3
+3:other/Happy Sugar Life OP Full【MAD Lyrics】.mp3
+4:other/Natsu Fuji - Kawaii Party.mp3
+5:other/the new sweet groove.mp3
+6:other/Watashi ni Tenshi ga Maiorita OP Full - Kimama na Tenshitachi_Wataten 5 (Vietsub - Lyrics).mp3
+7:other/Happy Happy Friends.mp3
+8:other/Super Driver AMV -  Suzumiya Haruhi Season 2 Full OP Song + Video.mp3
 playlist_end

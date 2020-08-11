@@ -1,0 +1,69 @@
+add-highlighter global/ number-lines
+add-highlighter global/ show-matching
+
+set-option global ui_options ncurses_assistant=none
+set-option global autoreload true
+set-option global modelinefmt '%val{bufname} %val{cursor_line}:%val{cursor_char_column}
+{{context_info}} {{mode_info}} %sh{bs=${kak_buflist//[^:]};echo $((${#bs}+1))}'
+
+map global user p '<a-!>xsel<ret>'
+map global user P '!xsel --output --clipboard<ret>'
+map global normal ';' ':'
+
+set-face global value rgb:00FF00+b
+set-face global type rgb:0000ff
+set-face global variable rgb:0000FF
+set-face global module rgb:00FF00
+set-face global function rgb:FF0000
+set-face global string rgb:00FF00+b
+set-face global keyword rgb:ff0000+b
+set-face global operator rgb:0000FF
+set-face global attribute rgb:FF0000
+set-face global comment rgb:777777
+set-face global meta rgb:FF0000
+set-face global builtin rgb:b9b9b9+b
+
+set-face global title rgb:368aeb+u
+set-face global header rgb:56d8c9+u
+set-face global bold rgb:dedede+b
+set-face global italic rgb:dedede+i
+set-face global mono rgb:83c746
+set-face global block rgb:e67f43
+set-face global link rgb:368aeb
+set-face global bullet rgb:ff81ca
+set-face global list rgb:eb6eb7
+
+set-face global Default rgb:FFFFFF,default
+set-face global PrimarySelection rgb:222222,rgb:777777
+set-face global SecondarySelection rgb:b9b9b9,rgb:3b3b3b+i
+set-face global PrimaryCursor rgb:FFFFFF,rgb:777777+b
+set-face global SecondaryCursor rgb:252525,rgb:56d8c9+i
+set-face global MatchingChar rgb:252525,rgb:368aeb
+set-face global Search rgb:dedede,rgb:70b433
+set-face global CurrentWord rgb:777777,rgb:368aeb
+
+set-face global MenuForeground rgb:3fc5b7,rgb:3b3b3b+b
+set-face global MenuBackground rgb:b9b9b9
+
+set-face global Information rgb:efc541,rgb:252525
+set-face global Error rgb:252525,rgb:ff5e56
+
+set-face global BufferPadding rgb:252525
+set-face global Whitespace rgb:777777
+set-face global StatusLine rgb:FFFFFF
+set-face global StatusLineInfo rgb:FF0000
+
+set-face global LineNumbers rgb:CCCCCC
+set-face global LineNumberCursor default,default+r
+
+hook global NormalKey y|d|c %{ nop %sh{
+  printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+}}
+
+# hook global InsertChar \t %{ try %{
+#   execute-keys -draft "h<a-h><a-k>\A\h+\z<ret><a-;>;%opt{indentwidth}@"
+# }}
+
+# hook global InsertDelete ' ' %{ try %{
+#   execute-keys -draft 'h<a-h><a-k>\A\h+\z<ret>i<space><esc><lt>'
+# }}

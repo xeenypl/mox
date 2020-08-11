@@ -9,6 +9,9 @@
 super + Return
   $TERMINAL
 
+super + F5
+  killall sleep
+
 super + s; {Return, m, t}
   $TERMINAL -e {nnn, ncmpcpp, transmission-remote-cli}
 

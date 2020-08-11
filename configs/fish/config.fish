@@ -1,11 +1,23 @@
 # Start X at login
 status is-login && [ -z "$DISPLAY" -a $XDG_VTNR = 1 ] &&  exec startx -- -keeptty
 
-set PATH $HOME/.local/bin $HOME/.cargo/bin $PATH
-
 # disale useless stuf
 function fish_greeting; end
 function fish_mode_prompt; end
+
+set PATH $HOME/.nimble/bin/ $HOME/.local/bin $HOME/.cargo/bin $PATH
+# set NNN_COLORS '1234'
+# set NNN_PLUG 'i:imgview;d:dragdrop'
+# 
+# set XDG_CONFIG_HOME "$HOME/.config"
+# set XDG_CACHE_HOME "$HOME/.cache"
+# set XDG_DATA_HOME "$HOME/.local/share"
+# 
+set EDITOR "kak"
+set BROWSER "qutebrowser"
+set SHELL "fish"
+set TERMINAL "alacritty"
+set PAGER "less"
 
 # seting up prompt
 function fish_prompt
@@ -44,25 +56,26 @@ function hide
   xdo show $WID
 end
 
-function ls
-  exa $argv
-end
+function ls ; exa $argv;    end
+function ll ; ls -la $argv; end
+function la ; ls -a $argv;  end
+function l  ; ls -l $argv;  end
 
-function ll
-  ls -la $argv
-end
-
-function la
-  ls -a $argv
-end
-
-function l
-  ls -l $argv
-end
+function :q  ; exit; end
+function :Q  ; exit; end
+function :wq ; exit; end
+function :Wq ; exit; end
+function :WQ ; exit; end
 
 function md
   mkdir -p $argv
   cd $argv[1]
+end
+
+function forever
+  while true 
+    command $argv
+  end
 end
 
 function tor-del-all
@@ -90,3 +103,14 @@ end
 function configs
   nvim (find ~/.config/ -type f | fzf)
 end
+
+function yt-mp3
+  youtube-dl \
+    --extract-audio \
+    --audio-format wav \
+    --ignore-errors \
+    --output "%(uploader)s/%(title)s.%(ext)s" \
+    $argv 
+end
+
+
